@@ -6,8 +6,6 @@ import android.widget.ImageView
 import com.bumptech.glide.Glide
 import com.google.firebase.storage.FirebaseStorage
 
-//import kotlinx.android.synthetic.main.activity_main.*
-
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
