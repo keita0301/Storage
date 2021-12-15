@@ -18,10 +18,12 @@ class MainActivity : AppCompatActivity() {
         Log.d("Test","1")
         val storage = FirebaseStorage.getInstance()
         val storageRef = storage.reference
-        val dir = storageRef.child("neet.png")
+        val gsReference = storage.getReferenceFromUrl("gs://test02-4d86d.appspot.com/neet.png")
+
+//        val dir = storageRef.child("neet.png")
         Log.d("Test","2")
         val byteLength=1024*1024L
-        dir.getBytes(byteLength).addOnSuccessListener{
+        gsReference.getBytes(byteLength).addOnSuccessListener{
                 bytes ->
             Log.d("Test","3")
             val data = String(bytes, Charsets.UTF_8)
