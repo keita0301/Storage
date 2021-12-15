@@ -2,11 +2,9 @@ package com.example.storage
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.ImageView
-import android.widget.TextView
+import com.bumptech.glide.Glide
 import com.google.firebase.storage.FirebaseStorage
-import org.w3c.dom.Text
 
 //import kotlinx.android.synthetic.main.activity_main.*
 
@@ -14,6 +12,14 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val image : ImageView = findViewById(R.id.image)
+        val storageRef = FirebaseStorage.getInstance().reference
+        val imageRef = storageRef.child("neet.png")
+            Glide.with(this)
+            .load(imageRef)
+            .into(image)
+
 
 //        val test : TextView = findViewById(R.id.test)
 //        val image : ImageView = findViewById(R.id.image)
